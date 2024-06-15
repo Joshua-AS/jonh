@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>ASSIGNMENT 1</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="list.css">
+    </head>
+    <body>
+        <div class="nav">
+            <a href="index.html" > HOME</a>
+            <a href="details.html" > MY DETAILS</a>
+            <a href="assignment_list.html" > ASSIGNMENTS</a>
+        </div>    
+        <div class="assignment">
+            <h1>Course Code: EEC410</h1>
+            <h2>Title: Computer Programming For Engineers</h2>
+            <p>Date Submitted: May 10, 2024</p>
+            <div class="body">
+                <br>
+                <p class="code">
+                    PROGRAM NewtonsLawsOfMotion
+                    <br><br>
+  IMPLICIT NONE<br>
+  <br><br>
+  INTEGER :: choice<br>
+  REAL :: force, mass, acceleration, distance, time, velocity<br><br>
+  ! Prompt user to choose which Newton's law to execute<br><br>
+  PRINT *, 'Which Newton law would you like to execute?'<br><br>
+  PRINT *, '1. Newton''s First Law (Law of Inertia)'<br><br>
+  PRINT *, '2. Newton''s Second Law (F = ma)'<br><br>
+  PRINT *, '3. Newton''s Third Law (Action and Reaction)'<br><br>
+  READ *, choice<br><br>
+  <br>
+  ! Execute the chosen Newton's law<br><br>
+  SELECT CASE (choice)<br><br>
+  <br><br>
+    CASE (1) ! Newton's First Law (Law of Inertia)<br><br>
+      PRINT *, 'Newton''s First Law: An object will remain at rest or <br><br>
+      in uniform motion unless acted upon by an external force.'<br><br>
+      <br><br>
+    CASE (2) ! Newton's Second Law (F = ma)<br><br>
+      PRINT *, 'Newton''s Second Law: Enter the mass (kg):'<br><br>
+      READ *, mass<br><br>
+      <br><br>
+      PRINT *, 'Enter the force (N):'<br><br>
+      READ *, force<br><br>
+      <br><br>
+      acceleration = force / mass<br><br>
+      PRINT *, 'Acceleration:', acceleration, 'm/s^2'<br><br>
+      <br><br>
+    CASE (3) ! Newton's Third Law (Action and Reaction)<br><br>
+      PRINT *, 'Newton''s Third Law: For every action,<br> <br>
+      there is an equal and opposite reaction.'<br><br>
+      ! This law doesn't require any input values.<br><br>
+    <br><br>
+    CASE DEFAULT<br><br>
+      PRINT *, 'Invalid choice.'<br><br>
+    <br><br>
+  END SELECT<br><br>
+  <br><br>
+END PROGRAM NewtonsLawsOfMotion
+</p>
+<hr>
+              <strong><p>Explanation of the logical steps used in writing the program:</p></strong>
+              <p>1.Program Structure: The program starts with the PROGRAM statement and ends with the END PROGRAM statement. It is named NewtonsLawsOfMotion.
+                <br><br>
+                2.Variable Declaration: The IMPLICIT NONE statement is used to ensure all variables are explicitly declared.
+                <br><br>
+                3.User Prompt: The user is prompted to choose which Newton's law to execute by entering a number corresponding to the desired law.
+                <br><br>
+                4.Selection Structure: A SELECT CASE structure is used to execute the chosen Newton's law based on the user's input.
+                <br><br>
+                5.Case Statements: Each case statement corresponds to one of Newton's laws. In each case, the program performs the necessary calculations or displays information related to the chosen law.
+                <br><br>
+                6.Input: For Newton's second law, the program prompts the user to input the mass and force values.
+                <br><br>
+                7.Calculation: The acceleration is calculated using the formula a=Fm,(Newton's second law).
+                <br><br>
+                8.Output: The calculated acceleration is printed to the console.
+                <br><br>
+                9.Default Case: An invalid choice by the user results in a default message indicating an invalid choice.
+                </p>
+            </div>
+          </div>
+    </body>
+</html>

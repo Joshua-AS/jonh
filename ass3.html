@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Circuit Simulation Code</title>
+    <style>
+        
+.nav{
+    background-color: #333;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.nav a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+    </style>
+</head>
+<body style="background-color: black;">
+    <div class="nav">
+        <a href="index.html" > HOME</a>
+        <a href="details.html" > MY DETAILS</a>
+        <a href="assignment_list.html" > ASSIGNMENTS</a>
+    </div>  
+    <h1 style="text-align: center;">Circuit Simulation Code (Fortran)</h1>
+    <pre style="border-radius: 5px; background-color: white; padding: 5%; margin: 0 5%;">
+        program circuit_simulation
+            implicit none
+
+            ! Constants
+            integer, parameter :: max_components = 100
+            integer, parameter :: max_time_steps = 1000
+
+            ! Declare variables for circuit components
+            integer :: num_components
+            type(component_type), dimension(max_components) :: components
+
+            ! Initialize components and circuit connections
+            call initialize_components(components, num_components)
+            call setup_circuit(components, num_components)
+    
+            ! Perform time-domain simulation
+            call simulate_transient(components, num_components)
+    
+            ! Perform frequency-domain analysis (optional)
+            ! call simulate_frequency_domain(components, num_components)
+    
+            ! Output results
+            call output_results(components, num_components)
+    
+contains
+    
+            subroutine initialize_components(components, num_components)
+                ! Initialize components (dummy subroutine)
+                integer :: num_components
+                type(component_type), dimension(max_components) :: components
+        
+                ! Example initialization (replace with actual initialization logic)
+                num_components = 3
+        
+                ! Initialize component properties (example)
+                components(1) % type = 'resistor'
+                components(1) % value = 100.0
+        
+                components(2) % type = 'capacitor'
+                components(2) % value = 0.001
+        
+                components(3) % type = 'transistor'
+                components(3) % value = 2.0
+        
+                ! Add more components as needed
+            end subroutine initialize_components
+    
+            subroutine setup_circuit(components, num_components)
+                ! Setup circuit connections (dummy subroutine)
+                integer :: num_components
+                type(component_type), dimension(max_components) :: components
+        
+                ! Example setup (replace with actual circuit setup logic)
+                print *, 'Setting up circuit...'
+            end subroutine setup_circuit
+    
+            subroutine simulate_transient(components, num_components)
+                ! Time stepping loop for transient analysis
+                integer :: time_step
+                do time_step = 1, max_time_steps
+                    ! Update each component
+                    integer :: i
+                    do i = 1, num_components
+                        call update_component(components(i))
+                    end do
+                end do
+            end subroutine simulate_transient
+    
+            subroutine update_component(component)
+                ! Update component state based on connections and current state
+                type(component_type) :: component
+        
+                ! Placeholder: Update based on component type
+                select case (component % type)
+                    case ('resistor')
+                        print *, 'Updating resistor...'
+                    case ('capacitor')
+                        print *, 'Updating capacitor...'
+                    case ('transistor')
+                        print *, 'Updating transistor...'
+                    case default
+                        print *, 'Unknown component type...'
+                end select
+            end subroutine update_component
+    
+            subroutine output_results(components, num_components)
+                ! Output simulation results (dummy subroutine)
+                integer :: num_components
+                type(component_type), dimension(max_components) :: components
+        
+                print *, 'Outputting results...'
+                ! Add actual output logic here (e.g., writing to files)
+            end subroutine output_results
+    
+end program circuit_simulation
+
+! Define component type structure
+type :: component_type
+    character(len=20) :: type ! Type of component (e.g., resistor, capacitor, transistor)
+    real :: value ! Value associated with the component (e.g., resistance, capacitance, gain)
+</pre>
+<p style="color: white; text-align: center;">
+    The above code is a program developed to simulate the behavior of an electronic circuit
+</p>
+</body>
+</html>

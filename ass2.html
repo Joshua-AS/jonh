@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadratic Equation Solver</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .nav{
+    background-color: #333;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.nav a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: bold;
+}
+        @media only screen and (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="index.html" > HOME</a>
+        <a href="details.html" > MY DETAILS</a>
+        <a href="assignment_list.html" > ASSIGNMENTS</a>
+    </div> 
+    <h1>Quadratic Equation Solver in Fortran</h1>
+    
+    <p>This page demonstrates a Fortran program that solves a quadratic equation based on user input of coefficients \(a\), \(b\), and \(c\).</p>
+    
+    <h2>Fortran Code:</h2>
+    <pre>
+        IMPL IC IT NONE 
+        3 REAL : : a , b , c , d , sd 
+        4 COMPLEX : : cd 
+        5 REAL : : root1 , root2 , rootu 
+        6 PRINT ∗ , ’ Enter the value of a ’
+        7 READ ∗ , a 
+        8 PRINT ∗ , ’ Enter the value o f b ’ 
+        9 READ ∗ , b
+        10 PRINT ∗ , ’ Enter the value of c ’ 
+        11 READ ∗ , c 
+        12 WRITE ( ∗ , ∗ ) ” The equation is” , a , ” x^2 +” , b , ”x +” , c , ”=0”
+        13 d = b∗b − 4.0∗a∗c 
+        14 I F ( d = = 0 . 0 ) Then 15 rootu = (−b ) / ( 2 . 0 ∗ a ) 
+        16 WRITE ( ∗ , ∗ ) ’ The equation has one unique root ’ , rootu 
+        17 ELSE I F ( d > 0 . 0 ) THEN 
+        18 sd = SQRT( d ) 
+        19 root1 = (−b + sd ) / ( 2 . 0 ∗ a ) ! first root 
+        20 root2 = (−b − sd ) / ( 2 . 0 ∗ a ) ! second root 
+        21 WRITE ( ∗ , ∗ ) ’ Roots are ’ , root1 , ’ and ’ , root2 
+        22 ELSE 
+        23 sd = SQRT(−1∗d ) 
+        24 WRITE ( ∗ , ∗ ) ’ The equation has no real roots ! ’
+        25 WRITE ( ∗ , ∗ ) ’ The complex Roots are ’ , (−b )/ ( 2∗ a ) , ”+” , sd , ” j / ” , 2∗a , ” and ” , & 
+        26 & (−b)/ (2∗a) , ”− ” , sd , ” j / ” , 2∗a 
+        27 END I F 
+        28 END PROGRAM Quadratic Equation
+    </pre>
+    
+    <h2>Explanation:</h2>
+    
+    <p>The Fortran code reads the coefficients \(a\), \(b\), and \(c\) of a quadratic equation, calculates the discriminant \(d\), and determines the nature of the roots based on \(d\).</p>
+    
+    <ul>
+        <li><code>a</code>, <code>b</code>, <code>c</code>: Coefficients of the quadratic equation \(ax^2 + bx + c = 0\)</li>
+        <li><code>d</code>: Discriminant (\(b^2 - 4ac\))</li>
+        <li><code>root1</code>, <code>root2</code>: Real roots of the quadratic equation if \(d > 0\)</li>
+        <li><code>rootu</code>: Unique real root if \(d = 0\)</li>
+        <li>Complex roots are calculated if \(d < 0\)</li>
+    </ul>
+    
+    <h2>Example Output:</h2>
+    <pre><code>
+        The equation is 1 x^2 -3 x + 2 = 0
+        Roots are 2 and -1
+    </code></pre>
+    
+    <p>This output indicates that for the equation \(x^2 - 3x + 2 = 0\), the roots are \(x = 2\) and \(x = -1\).</p>
+    
+</body>
+</html>
